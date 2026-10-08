@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workshop Dynamic Games</title>
+  <meta name="description" content="Workshop Dynamic Games, November 30–December 1, 2026, Toulouse School of Economics.">
+  <style>
+    :root {
+      --bg: #f7f4f1;
+      --paper: #ffffff;
+      --text: #25303b;
+      --muted: #6d7782;
+      --accent: #4f8f8a;
+      --accent-soft: #e8f1ef;
+      --accent-deep: #356d69;
+      --line: #e8dfd8;
+      --shadow: 0 14px 40px rgba(46, 39, 35, 0.08);
+      --max: 1040px;
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #fbf8f5 0%, #f6f2ee 100%);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent-deep); }
+
+    .hero {
+      position: relative;
+      min-height: 430px;
+      display: flex;
+      align-items: end;
+      background-image:
+        linear-gradient(rgba(30, 29, 28, 0.28), rgba(30, 29, 28, 0.50)),
+        url('https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Toulouse_-_Garonne_Skyline_at_Sunset_-_2012-02-22.jpg/1280px-Toulouse_-_Garonne_Skyline_at_Sunset_-_2012-02-22.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .hero-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0 44px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.25);
+      font-size: 0.84rem;
+      letter-spacing: 0.04em;
+      backdrop-filter: blur(2px);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.03;
+      font-size: clamp(2.6rem, 7vw, 4.9rem);
+      max-width: 9ch;
+    }
+
+    .hero-sub {
+      margin: 14px 0 0;
+      font-size: 1.08rem;
+      color: rgba(255,255,255,0.92);
+      max-width: 700px;
+    }
+
+    main {
+      width: min(var(--max), calc(100% - 40px));
+      margin: -42px auto 0;
+      position: relative;
+      z-index: 2;
+      padding-bottom: 64px;
+    }
+
+    .panel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+      margin-bottom: 24px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .info-card {
+      background: linear-gradient(180deg, #fff 0%, #fbfaf6 100%);
+      border: 1px solid var(--line);
+      border-top: 4px solid #c7a86b;
+      border-radius: 16px;
+      padding: 18px 18px 16px;
+    }
+
+    .label {
+      display: block;
+      text-transform: uppercase;
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .value {
+      font-size: 1.05rem;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      font-size: 1.9rem;
+      color: #2e343b;
+    }
+
+    .program-note {
+      margin: -8px 0 20px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .day-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .day-head {
+      background: linear-gradient(90deg, #4f8f8a 0%, #7eaaa5 100%);
+      color: white;
+      padding: 16px 18px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.3rem;
+    }
+
+    .timeline {
+      padding: 14px 18px 18px;
+    }
+
+    .event {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 14px;
+      padding: 11px 0;
+      border-bottom: 1px solid #efe7e1;
+      align-items: start;
+    }
+
+    .event:last-child { border-bottom: none; }
+
+    .time {
+      font-weight: 700;
+      color: var(--accent-deep);
+    }
+
+    .desc {
+      color: var(--text);
+    }
+
+    .participants {
+      columns: 2;
+      column-gap: 52px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .participants li {
+      break-inside: avoid;
+      margin-bottom: 9px;
+      padding-left: 2px;
+    }
+
+    .organizers {
+      font-size: 1.04rem;
+    }
+
+    .credit {
+      margin-top: 8px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    footer {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 0 0 40px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 840px) {
+      .info-grid, .program-grid { grid-template-columns: 1fr; }
+      .participants { columns: 1; }
+      main { margin-top: -24px; }
+    }
+
+    @media (max-width: 560px) {
+      .hero { min-height: 370px; }
+      .hero-inner { padding-bottom: 34px; }
+      .event { grid-template-columns: 1fr; gap: 2px; }
+      .time { margin-bottom: 1px; }
+      .panel { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>Workshop Dynamic Games</h1>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <div class="info-grid">
+        <div class="info-card">
+          <span class="label">Dates</span>
+          <div class="value">November 30 – December 1, 2026</div>
+        </div>
+        <div class="info-card">
+          <span class="label">Venue</span>
+          <div class="value">Toulouse School of Economics<br>Amphithéâtre A5</div>
+        </div>
+        <div class="info-card">
+          <span class="label">Organizers</span>
+          <div class="value">Fabien Gensbittel · Jérôme Renault · Bruno Ziliotto</div>
+        </div>
+      </div>
+      <div class="credit">Photo: Toulouse skyline at sunset, via Wikimedia Commons (CC BY-SA).</div>
+    </section>
+
+    <section class="panel">
+      <h2>Program</h2>
+      <p class="program-note">Each talk is 40 minutes, including questions.</p>
+      <div class="program-grid">
+        <div class="day-card">
+          <div class="day-head">Monday, November 30</div>
+          <div class="timeline">
+            <div class="event"><div class="time">10:30–12:30</div><div class="desc">Talks</div></div>
+            <div class="event"><div class="time">12:30–14:00</div><div class="desc">Lunch</div></div>
+            <div class="event"><div class="time">14:00–16:00</div><div class="desc">Talks</div></div>
+            <div class="event"><div class="time">16:00–16:30</div><div class="desc">Coffee break</div></div>
+            <div class="event"><div class="time">16:30–17:50</div><div class="desc">Talks</div></div>
+            <div class="event"><div class="time">Evening</div><div class="desc">Social dinner</div></div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-head">Tuesday, December 1</div>
+          <div class="timeline">
+            <div class="event"><div class="time">09:00–10:20</div><div class="desc">Talks</div></div>
+            <div class="event"><div class="time">10:20–10:50</div><div class="desc">Coffee break</div></div>
+            <div class="event"><div class="time">10:50–12:10</div><div class="desc">Talks</div></div>
+            <div class="event"><div class="time">12:30–13:45</div><div class="desc">Lunch</div></div>
+            <div class="event"><div class="time">13:45–15:45</div><div class="desc">Talks</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Participants</h2>
+      <ul class="participants">
+        <li>Anna Sanktjohanser</li>
+        <li>Johannes Hörner</li>
+        <li>Tristan Tomala</li>
+        <li>Nicolas Vieille</li>
+        <li>Sylvain Sorin</li>
+        <li>Guillaume Vigeral</li>
+        <li>Melissa Garcia Gonzalez</li>
+        <li>David Lurie</li>
+        <li>Célia Gaudin</li>
+        <li>Catherine Rainer</li>
+        <li>Pierre Cardaliaguet</li>
+        <li>Marc Quincampoix</li>
+        <li>Xavier Venel</li>
+        <li>Mathieu Faure</li>
+        <li>Andrea Davini</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    Workshop Dynamic Games · Toulouse · 2026
+  </footer>
+</body>
+</html>
