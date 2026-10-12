@@ -39,7 +39,7 @@
       align-items: end;
       background-image:
         linear-gradient(rgba(30, 29, 28, 0.28), rgba(30, 29, 28, 0.50)),
-        url('https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Toulouse_-_Garonne_Skyline_at_Sunset_-_2012-02-22.jpg/1280px-Toulouse_-_Garonne_Skyline_at_Sunset_-_2012-02-22.jpg');
+        url('https://upload.wikimedia.org/wikipedia/commons/5/55/Toulouse_-_Garonne.jpg');
       background-size: cover;
       background-position: center;
       color: white;
@@ -49,35 +49,20 @@
       width: min(var(--max), calc(100% - 40px));
       margin: 0 auto;
       padding: 56px 0 44px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.16);
-      border: 1px solid rgba(255,255,255,0.25);
-      font-size: 0.84rem;
-      letter-spacing: 0.04em;
-      backdrop-filter: blur(2px);
-      margin-bottom: 18px;
+      text-align: center;
     }
 
     h1 {
-      margin: 0;
+      margin: 0 auto;
       font-family: Georgia, "Times New Roman", serif;
       font-weight: 400;
       letter-spacing: -0.02em;
       line-height: 1.03;
-      font-size: clamp(2.6rem, 7vw, 4.9rem);
-      max-width: 9ch;
-    }
-
-    .hero-sub {
-      margin: 14px 0 0;
-      font-size: 1.08rem;
-      color: rgba(255,255,255,0.92);
-      max-width: 700px;
+      font-size: clamp(1.65rem, 6.2vw, 4.5rem);
+      max-width: none;
+      white-space: nowrap;
+      text-align: center;
+      text-shadow: 0 2px 14px rgba(0,0,0,0.28);
     }
 
     main {
@@ -198,10 +183,6 @@
       padding-left: 2px;
     }
 
-    .organizers {
-      font-size: 1.04rem;
-    }
-
     .credit {
       margin-top: 8px;
       font-size: 0.88rem;
@@ -231,7 +212,9 @@
     }
   </style>
 </head>
+
 <body>
+
   <header class="hero">
     <div class="hero-inner">
       <h1>Workshop Dynamic Games</h1>
@@ -239,55 +222,136 @@
   </header>
 
   <main>
+
     <section class="panel">
       <div class="info-grid">
+
         <div class="info-card">
           <span class="label">Dates</span>
-          <div class="value">November 30 – December 1, 2026</div>
+          <div class="value">
+            November 30 – December 1, 2026
+          </div>
         </div>
+
         <div class="info-card">
           <span class="label">Venue</span>
-          <div class="value">Toulouse School of Economics<br>Amphithéâtre A5</div>
+          <div class="value">
+            Toulouse School of Economics<br>
+            Amphithéâtre A5
+          </div>
         </div>
+
         <div class="info-card">
           <span class="label">Organizers</span>
-          <div class="value">Fabien Gensbittel · Jérôme Renault · Bruno Ziliotto</div>
+          <div class="value">
+            Fabien Gensbittel · Jérôme Renault · Bruno Ziliotto
+          </div>
         </div>
+
       </div>
-      <div class="credit">Photo: Toulouse skyline at sunset, via Wikimedia Commons (CC BY-SA).</div>
+
+      <div class="credit">
+        Photo: Tiia Monto / Wikimedia Commons (CC BY-SA 3.0).
+      </div>
     </section>
 
+
     <section class="panel">
+
       <h2>Program</h2>
-      <p class="program-note">Each talk is 40 minutes, including questions.</p>
+
+      <p class="program-note">
+        Each talk is 40 minutes, including questions.
+      </p>
+
       <div class="program-grid">
+
         <div class="day-card">
-          <div class="day-head">Monday, November 30</div>
+
+          <div class="day-head">
+            Monday, November 30
+          </div>
+
           <div class="timeline">
-            <div class="event"><div class="time">10:30–12:30</div><div class="desc">Talks</div></div>
-            <div class="event"><div class="time">12:30–14:00</div><div class="desc">Lunch</div></div>
-            <div class="event"><div class="time">14:00–16:00</div><div class="desc">Talks</div></div>
-            <div class="event"><div class="time">16:00–16:30</div><div class="desc">Coffee break</div></div>
-            <div class="event"><div class="time">16:30–17:50</div><div class="desc">Talks</div></div>
-            <div class="event"><div class="time">Evening</div><div class="desc">Social dinner</div></div>
+
+            <div class="event">
+              <div class="time">10:30–12:30</div>
+              <div class="desc">Talks</div>
+            </div>
+
+            <div class="event">
+              <div class="time">12:30–14:00</div>
+              <div class="desc">Lunch</div>
+            </div>
+
+            <div class="event">
+              <div class="time">14:00–16:00</div>
+              <div class="desc">Talks</div>
+            </div>
+
+            <div class="event">
+              <div class="time">16:00–16:30</div>
+              <div class="desc">Coffee break</div>
+            </div>
+
+            <div class="event">
+              <div class="time">16:30–17:50</div>
+              <div class="desc">Talks</div>
+            </div>
+
+            <div class="event">
+              <div class="time">Evening</div>
+              <div class="desc">Social dinner</div>
+            </div>
+
           </div>
         </div>
 
+
         <div class="day-card">
-          <div class="day-head">Tuesday, December 1</div>
+
+          <div class="day-head">
+            Tuesday, December 1
+          </div>
+
           <div class="timeline">
-            <div class="event"><div class="time">09:00–10:20</div><div class="desc">Talks</div></div>
-            <div class="event"><div class="time">10:20–10:50</div><div class="desc">Coffee break</div></div>
-            <div class="event"><div class="time">10:50–12:10</div><div class="desc">Talks</div></div>
-            <div class="event"><div class="time">12:30–13:45</div><div class="desc">Lunch</div></div>
-            <div class="event"><div class="time">13:45–15:45</div><div class="desc">Talks</div></div>
+
+            <div class="event">
+              <div class="time">09:00–10:20</div>
+              <div class="desc">Talks</div>
+            </div>
+
+            <div class="event">
+              <div class="time">10:20–10:50</div>
+              <div class="desc">Coffee break</div>
+            </div>
+
+            <div class="event">
+              <div class="time">10:50–12:10</div>
+              <div class="desc">Talks</div>
+            </div>
+
+            <div class="event">
+              <div class="time">12:30–13:45</div>
+              <div class="desc">Lunch</div>
+            </div>
+
+            <div class="event">
+              <div class="time">13:45–15:45</div>
+              <div class="desc">Talks</div>
+            </div>
+
           </div>
         </div>
+
       </div>
     </section>
 
+
     <section class="panel">
+
       <h2>Participants</h2>
+
       <ul class="participants">
         <li>Anna Sanktjohanser</li>
         <li>Johannes Hörner</li>
@@ -305,11 +369,15 @@
         <li>Mathieu Faure</li>
         <li>Andrea Davini</li>
       </ul>
+
     </section>
+
   </main>
+
 
   <footer>
     Workshop Dynamic Games · Toulouse · 2026
   </footer>
+
 </body>
 </html>
