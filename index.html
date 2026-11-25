@@ -1,3 +1,6 @@
+Voici le code complet à copier-coller dans `index.html` sur GitHub. J'ai ajouté **Welcome coffee and pastries, lundi 10h00–10h30**, et conservé le dîner lundi à 19h30 aux Pieds sous la Table, ainsi que tout le reste du programme.
+
+```
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,33 +9,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Workshop Dynamic Games</title>
   <meta name="description" content="Workshop Dynamic Games, November 30–December 1, 2026, Toulouse School of Economics.">
-
   <style>
     :root {
+      --bg: #f7f4f1;
+      --paper: #ffffff;
       --text: #25303b;
       --muted: #6d7782;
       --accent: #4f8f8a;
+      --accent-soft: #e8f1ef;
       --accent-deep: #356d69;
       --line: #e8dfd8;
+      --shadow: 0 14px 40px rgba(46, 39, 35, 0.08);
       --max: 1040px;
+      --radius: 18px;
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      background: linear-gradient(180deg, #fbf8f5, #f6f2ee);
+      background: linear-gradient(180deg, #fbf8f5 0%, #f6f2ee 100%);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.6;
     }
 
+    a { color: var(--accent-deep); }
+
     .hero {
+      position: relative;
       min-height: 430px;
       display: flex;
       align-items: end;
       background-image:
-        linear-gradient(rgba(30,29,28,.28), rgba(30,29,28,.50)),
+        linear-gradient(rgba(30, 29, 28, 0.28), rgba(30, 29, 28, 0.50)),
         url('https://upload.wikimedia.org/wikipedia/commons/5/55/Toulouse_-_Garonne.jpg');
       background-size: cover;
       background-position: center;
@@ -46,28 +56,51 @@
       text-align: center;
     }
 
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.25);
+      font-size: 0.84rem;
+      letter-spacing: 0.04em;
+      backdrop-filter: blur(2px);
+      margin-bottom: 18px;
+    }
+
     h1 {
-      margin: 0;
+      margin: 0 auto;
       font-family: Georgia, "Times New Roman", serif;
       font-weight: 400;
       letter-spacing: -0.02em;
+      line-height: 1.03;
       font-size: clamp(1.65rem, 6.2vw, 4.5rem);
+      max-width: none;
       white-space: nowrap;
-      text-shadow: 0 2px 14px rgba(0,0,0,.28);
+      text-align: center;
+      text-shadow: 0 2px 14px rgba(0,0,0,0.28);
+    }
+
+    .hero-sub {
+      margin: 14px 0 0;
+      font-size: 1.08rem;
+      color: rgba(255,255,255,0.92);
+      max-width: 700px;
     }
 
     main {
       width: min(var(--max), calc(100% - 40px));
       margin: -42px auto 0;
       position: relative;
+      z-index: 2;
       padding-bottom: 64px;
     }
 
     .panel {
-      background: white;
+      background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: 0 14px 40px rgba(46,39,35,.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
       padding: 26px;
       margin-bottom: 24px;
     }
@@ -79,21 +112,25 @@
     }
 
     .info-card {
-      background: linear-gradient(180deg, #fff, #fbfaf6);
+      background: linear-gradient(180deg, #fff 0%, #fbfaf6 100%);
       border: 1px solid var(--line);
       border-top: 4px solid #c7a86b;
       border-radius: 16px;
-      padding: 18px;
+      padding: 18px 18px 16px;
     }
 
     .label {
       display: block;
       text-transform: uppercase;
-      font-size: .76rem;
-      letter-spacing: .08em;
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
       color: var(--muted);
       font-weight: 700;
       margin-bottom: 6px;
+    }
+
+    .value {
+      font-size: 1.05rem;
     }
 
     h2 {
@@ -101,11 +138,13 @@
       font-family: Georgia, "Times New Roman", serif;
       font-weight: 500;
       font-size: 1.9rem;
+      color: #2e343b;
     }
 
     .program-note {
       margin: -8px 0 20px;
       color: var(--muted);
+      font-size: 0.98rem;
     }
 
     .program-grid {
@@ -118,10 +157,11 @@
       border: 1px solid var(--line);
       border-radius: 16px;
       overflow: hidden;
+      background: #fff;
     }
 
     .day-head {
-      background: linear-gradient(90deg, #4f8f8a, #7eaaa5);
+      background: linear-gradient(90deg, #4f8f8a 0%, #7eaaa5 100%);
       color: white;
       padding: 16px 18px;
       font-family: Georgia, "Times New Roman", serif;
@@ -138,21 +178,24 @@
       gap: 14px;
       padding: 11px 0;
       border-bottom: 1px solid #efe7e1;
+      align-items: start;
     }
 
-    .event:last-child {
-      border-bottom: none;
-    }
+    .event:last-child { border-bottom: none; }
 
     .time {
       font-weight: 700;
       color: var(--accent-deep);
     }
 
+    .desc {
+      color: var(--text);
+    }
+
     .talk-title {
       display: block;
       color: var(--muted);
-      font-size: .91rem;
+      font-size: 0.91rem;
       line-height: 1.4;
       margin-top: 3px;
     }
@@ -168,37 +211,43 @@
     .participants li {
       break-inside: avoid;
       margin-bottom: 9px;
+      padding-left: 2px;
+    }
+
+    .organizers {
+      font-size: 1.04rem;
     }
 
     .credit {
       margin-top: 8px;
-      font-size: .88rem;
+      font-size: 0.88rem;
       color: var(--muted);
     }
 
     footer {
       width: min(var(--max), calc(100% - 40px));
       margin: 0 auto;
-      padding-bottom: 40px;
+      padding: 0 0 40px;
       color: var(--muted);
-      font-size: .92rem;
+      font-size: 0.92rem;
     }
 
     @media (max-width: 840px) {
       .info-grid, .program-grid { grid-template-columns: 1fr; }
       .participants { columns: 1; }
+      main { margin-top: -24px; }
     }
 
     @media (max-width: 560px) {
       .hero { min-height: 370px; }
+      .hero-inner { padding-bottom: 34px; }
       .event { grid-template-columns: 1fr; gap: 2px; }
+      .time { margin-bottom: 1px; }
       .panel { padding: 20px; }
     }
   </style>
 </head>
-
 <body>
-
   <header class="hero">
     <div class="hero-inner">
       <h1>Workshop Dynamic Games</h1>
@@ -206,171 +255,57 @@
   </header>
 
   <main>
-
     <section class="panel">
       <div class="info-grid">
-
         <div class="info-card">
           <span class="label">Dates</span>
-          November 30 – December 1, 2026
+          <div class="value">November 30 – December 1, 2026</div>
         </div>
-
         <div class="info-card">
           <span class="label">Venue</span>
-          Toulouse School of Economics<br>
-          Amphithéâtre A5
+          <div class="value">Toulouse School of Economics<br>Amphithéâtre A5</div>
         </div>
-
         <div class="info-card">
           <span class="label">Organizers</span>
-          Fabien Gensbittel · Jérôme Renault · Bruno Ziliotto
+          <div class="value">Fabien Gensbittel · Jérôme Renault · Bruno Ziliotto</div>
         </div>
-
       </div>
-
-      <div class="credit">
-        Photo: Tiia Monto / Wikimedia Commons (CC BY-SA 3.0).
-      </div>
+      <div class="credit">Photo: Tiia Monto / Wikimedia Commons (CC BY-SA 3.0).</div>
     </section>
 
     <section class="panel">
       <h2>Program</h2>
       <p class="program-note">Each talk is 40 minutes, including questions.</p>
-
       <div class="program-grid">
-
-        <!-- MONDAY -->
         <div class="day-card">
           <div class="day-head">Monday, November 30</div>
           <div class="timeline">
-
-            <div class="event">
-              <div class="time">10:30–11:10</div>
-              <div><strong>Guillaume Vigeral</strong>
-                <span class="talk-title">Percolation MDPs</span>
-              </div>
-            </div>
-
-            <div class="event">
-              <div class="time">11:10–11:50</div>
-              <div><strong>Andrea Davini</strong>
-                <span class="talk-title">Stochastic Homogenization of HJ Equations: A Differential Game Approach</span>
-              </div>
-            </div>
-
-            <div class="event">
-              <div class="time">11:50–12:30</div>
-              <div><strong>Melissa Garcia Gonzalez</strong>
-                <span class="talk-title">Stochastic Homogenization of Second-Order HJ Equations</span>
-              </div>
-            </div>
-
-            <div class="event">
-              <div class="time">12:30–14:00</div>
-              <div>Lunch</div>
-            </div>
-
-            <div class="event">
-              <div class="time">14:00–14:40</div>
-              <div><strong>Johannes Hörner</strong>
-                <span class="talk-title">Trading Favors, Revisited</span>
-              </div>
-            </div>
-
-            <div class="event">
-              <div class="time">14:40–15:20</div>
-              <div><strong>Tristan Tomala</strong>
-                <span class="talk-title">Pairwise Stability in Repeated Network Games</span>
-              </div>
-            </div>
-
-            <div class="event">
-              <div class="time">15:20–15:50</div>
-              <div>Coffee break</div>
-            </div>
-
-            <div class="event">
-              <div class="time">15:50–16:30</div>
-              <div><strong>Mathieu Faure</strong>
-                <span class="talk-title">Bayesian Learning in Misspecified Models</span>
-              </div>
-            </div>
-
-            <div class="event">
-              <div class="time">16:30–17:10</div>
-              <div><strong>Anna Sanktjohanser</strong>
-                <span class="talk-title">Search in an Emerging Market</span>
-              </div>
-            </div>
-
-            <div class="event">
-              <div class="time">Evening</div>
-              <div>Social dinner</div>
-            </div>
-
+            <div class="event"><div class="time">10:00–10:30</div><div class="desc">Welcome coffee and pastries</div></div>
+            <div class="event"><div class="time">10:30–11:10</div><div class="desc"><strong>Guillaume Vigeral</strong><span class="talk-title">Percolation MDPs</span></div></div>
+            <div class="event"><div class="time">11:10–11:50</div><div class="desc"><strong>Andrea Davini</strong><span class="talk-title">Stochastic Homogenization of HJ Equations: A Differential Game Approach</span></div></div>
+            <div class="event"><div class="time">11:50–12:30</div><div class="desc"><strong>Melissa Garcia Gonzalez</strong><span class="talk-title">Stochastic Homogenization of Second-Order HJ Equations</span></div></div>
+            <div class="event"><div class="time">12:30–14:00</div><div class="desc">Lunch</div></div>
+            <div class="event"><div class="time">14:00–14:40</div><div class="desc"><strong>Johannes Hörner</strong><span class="talk-title">Trading Favors, Revisited</span></div></div>
+            <div class="event"><div class="time">14:40–15:20</div><div class="desc"><strong>Tristan Tomala</strong><span class="talk-title">Pairwise Stability in Repeated Network Games</span></div></div>
+            <div class="event"><div class="time">15:20–15:50</div><div class="desc">Coffee break</div></div>
+            <div class="event"><div class="time">15:50–16:30</div><div class="desc"><strong>Mathieu Faure</strong><span class="talk-title">Bayesian Learning in Misspecified Models</span></div></div>
+            <div class="event"><div class="time">16:30–17:10</div><div class="desc"><strong>Anna Sanktjohanser</strong><span class="talk-title">Search in an Emerging Market</span></div></div>
+            <div class="event"><div class="time">19:30</div><div class="desc">Social dinner — Aux Pieds sous la Table</div></div>
           </div>
         </div>
-
-        <!-- TUESDAY -->
         <div class="day-card">
           <div class="day-head">Tuesday, December 1</div>
           <div class="timeline">
-
-            <div class="event">
-              <div class="time">09:40–10:20</div>
-              <div><strong>Sylvain Sorin</strong>
-                <span class="talk-title">Continuous-Time Stochastic Games: A Survey</span>
-              </div>
-            </div>
-
-            <div class="event">
-              <div class="time">10:20–10:50</div>
-              <div>Coffee break</div>
-            </div>
-
-            <div class="event">
-              <div class="time">10:50–11:30</div>
-              <div><strong>David Lurie</strong>
-                <span class="talk-title">Algorithmic Aspects in Partially Observable Stochastic Games</span>
-              </div>
-            </div>
-
-            <div class="event">
-              <div class="time">11:30–12:10</div>
-              <div><strong>Célia Gaudin</strong>
-                <span class="talk-title">Complexity of the Limit Value in Stochastic Games</span>
-              </div>
-            </div>
-
-            <div class="event">
-              <div class="time">12:30–13:45</div>
-              <div>Lunch</div>
-            </div>
-
-            <div class="event">
-              <div class="time">13:45–14:25</div>
-              <div><strong>Marc Quincampoix</strong>
-                <span class="talk-title">Generalized Abelian Theorems for Long Run Optimal Control</span>
-              </div>
-            </div>
-
-            <div class="event">
-              <div class="time">14:25–15:05</div>
-              <div><strong>Xavier Venel</strong>
-                <span class="talk-title">Back in the Queue: Strategic Re-Entry in Queueing Games</span>
-              </div>
-            </div>
-
-            <div class="event">
-              <div class="time">15:05–15:45</div>
-              <div><strong>Achraf Azize</strong>
-                <span class="talk-title">Optimal Regret of Bandits under Differential Privacy</span>
-              </div>
-            </div>
-
+            <div class="event"><div class="time">09:40–10:20</div><div class="desc"><strong>Sylvain Sorin</strong><span class="talk-title">Continuous-Time Stochastic Games: A Survey</span></div></div>
+            <div class="event"><div class="time">10:20–10:50</div><div class="desc">Coffee break</div></div>
+            <div class="event"><div class="time">10:50–11:30</div><div class="desc"><strong>David Lurie</strong><span class="talk-title">Algorithmic Aspects in Partially Observable Stochastic Games</span></div></div>
+            <div class="event"><div class="time">11:30–12:10</div><div class="desc"><strong>Célia Gaudin</strong><span class="talk-title">Complexity of the Limit Value in Stochastic Games</span></div></div>
+            <div class="event"><div class="time">12:30–13:45</div><div class="desc">Lunch</div></div>
+            <div class="event"><div class="time">13:45–14:25</div><div class="desc"><strong>Marc Quincampoix</strong><span class="talk-title">Generalized Abelian Theorems for Long Run Optimal Control</span></div></div>
+            <div class="event"><div class="time">14:25–15:05</div><div class="desc"><strong>Xavier Venel</strong><span class="talk-title">Back in the Queue: Strategic Re-Entry in Queueing Games</span></div></div>
+            <div class="event"><div class="time">15:05–15:45</div><div class="desc"><strong>Achraf Azize</strong><span class="talk-title">Optimal Regret of Bandits under Differential Privacy</span></div></div>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -392,12 +327,16 @@
         <li>Guillaume Vigeral</li>
       </ul>
     </section>
-
   </main>
 
   <footer>
     Workshop Dynamic Games · Toulouse · 2026
   </footer>
-
 </body>
 </html>
+
+```
+
+Tu peux remplacer tout le contenu de `index.html` sur GitHub par ce code, puis cliquer sur **Commit changes**.
+
+J’ai aussi préparé le fichier HTML complet si tu préfères le récupérer directement.
