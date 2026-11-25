@@ -1,6 +1,3 @@
-Voici le code complet à copier-coller dans `index.html` sur GitHub. J'ai ajouté **Welcome coffee and pastries, lundi 10h00–10h30**, et conservé le dîner lundi à 19h30 aux Pieds sous la Table, ainsi que tout le reste du programme.
-
-```
 
 <!DOCTYPE html>
 <html lang="en">
@@ -56,18 +53,6 @@ Voici le code complet à copier-coller dans `index.html` sur GitHub. J'ai ajout�
       text-align: center;
     }
 
-    .eyebrow {
-      display: inline-block;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.16);
-      border: 1px solid rgba(255,255,255,0.25);
-      font-size: 0.84rem;
-      letter-spacing: 0.04em;
-      backdrop-filter: blur(2px);
-      margin-bottom: 18px;
-    }
-
     h1 {
       margin: 0 auto;
       font-family: Georgia, "Times New Roman", serif;
@@ -79,13 +64,6 @@ Voici le code complet à copier-coller dans `index.html` sur GitHub. J'ai ajout�
       white-space: nowrap;
       text-align: center;
       text-shadow: 0 2px 14px rgba(0,0,0,0.28);
-    }
-
-    .hero-sub {
-      margin: 14px 0 0;
-      font-size: 1.08rem;
-      color: rgba(255,255,255,0.92);
-      max-width: 700px;
     }
 
     main {
@@ -214,10 +192,6 @@ Voici le code complet à copier-coller dans `index.html` sur GitHub. J'ai ajout�
       padding-left: 2px;
     }
 
-    .organizers {
-      font-size: 1.04rem;
-    }
-
     .credit {
       margin-top: 8px;
       font-size: 0.88rem;
@@ -277,35 +251,157 @@ Voici le code complet à copier-coller dans `index.html` sur GitHub. J'ai ajout�
       <h2>Program</h2>
       <p class="program-note">Each talk is 40 minutes, including questions.</p>
       <div class="program-grid">
+
+        <!-- MONDAY -->
         <div class="day-card">
           <div class="day-head">Monday, November 30</div>
           <div class="timeline">
-            <div class="event"><div class="time">10:00–10:30</div><div class="desc">Welcome coffee and pastries</div></div>
-            <div class="event"><div class="time">10:30–11:10</div><div class="desc"><strong>Guillaume Vigeral</strong><span class="talk-title">Percolation MDPs</span></div></div>
-            <div class="event"><div class="time">11:10–11:50</div><div class="desc"><strong>Andrea Davini</strong><span class="talk-title">Stochastic Homogenization of HJ Equations: A Differential Game Approach</span></div></div>
-            <div class="event"><div class="time">11:50–12:30</div><div class="desc"><strong>Melissa Garcia Gonzalez</strong><span class="talk-title">Stochastic Homogenization of Second-Order HJ Equations</span></div></div>
-            <div class="event"><div class="time">12:30–14:00</div><div class="desc">Lunch</div></div>
-            <div class="event"><div class="time">14:00–14:40</div><div class="desc"><strong>Johannes Hörner</strong><span class="talk-title">Trading Favors, Revisited</span></div></div>
-            <div class="event"><div class="time">14:40–15:20</div><div class="desc"><strong>Tristan Tomala</strong><span class="talk-title">Pairwise Stability in Repeated Network Games</span></div></div>
-            <div class="event"><div class="time">15:20–15:50</div><div class="desc">Coffee break</div></div>
-            <div class="event"><div class="time">15:50–16:30</div><div class="desc"><strong>Mathieu Faure</strong><span class="talk-title">Bayesian Learning in Misspecified Models</span></div></div>
-            <div class="event"><div class="time">16:30–17:10</div><div class="desc"><strong>Anna Sanktjohanser</strong><span class="talk-title">Search in an Emerging Market</span></div></div>
-            <div class="event"><div class="time">19:30</div><div class="desc">Social dinner — Aux Pieds sous la Table</div></div>
+
+            <div class="event">
+              <div class="time">10:00–10:30</div>
+              <div class="desc">Welcome coffee and pastries</div>
+            </div>
+
+            <div class="event">
+              <div class="time">10:30–11:10</div>
+              <div class="desc">
+                <strong>Sylvain Sorin</strong>
+                <span class="talk-title">Continuous-Time Stochastic Games: A Survey</span>
+              </div>
+            </div>
+
+            <div class="event">
+              <div class="time">11:10–11:50</div>
+              <div class="desc">
+                <strong>David Lurie</strong>
+                <span class="talk-title">Algorithmic Aspects in Partially Observable Stochastic Games</span>
+              </div>
+            </div>
+
+            <div class="event">
+              <div class="time">11:50–12:30</div>
+              <div class="desc">
+                <strong>Célia Gaudin</strong>
+                <span class="talk-title">Complexity of the Limit Value in Stochastic Games</span>
+              </div>
+            </div>
+
+            <div class="event">
+              <div class="time">12:30–14:00</div>
+              <div class="desc">Lunch</div>
+            </div>
+
+            <div class="event">
+              <div class="time">14:00–14:40</div>
+              <div class="desc">
+                <strong>Johannes Hörner</strong>
+                <span class="talk-title">Trading Favors, Revisited</span>
+              </div>
+            </div>
+
+            <div class="event">
+              <div class="time">14:40–15:20</div>
+              <div class="desc">
+                <strong>Tristan Tomala</strong>
+                <span class="talk-title">Pairwise Stability in Repeated Network Games</span>
+              </div>
+            </div>
+
+            <div class="event">
+              <div class="time">15:20–15:50</div>
+              <div class="desc">Coffee break</div>
+            </div>
+
+            <div class="event">
+              <div class="time">15:50–16:30</div>
+              <div class="desc">
+                <strong>Mathieu Faure</strong>
+                <span class="talk-title">Bayesian Learning in Misspecified Models</span>
+              </div>
+            </div>
+
+            <div class="event">
+              <div class="time">16:30–17:10</div>
+              <div class="desc">
+                <strong>Anna Sanktjohanser</strong>
+                <span class="talk-title">Search in an Emerging Market</span>
+              </div>
+            </div>
+
+            <div class="event">
+              <div class="time">19:30</div>
+              <div class="desc">Social dinner — Aux Pieds sous la Table</div>
+            </div>
+
           </div>
         </div>
+
+        <!-- TUESDAY -->
         <div class="day-card">
           <div class="day-head">Tuesday, December 1</div>
           <div class="timeline">
-            <div class="event"><div class="time">09:40–10:20</div><div class="desc"><strong>Sylvain Sorin</strong><span class="talk-title">Continuous-Time Stochastic Games: A Survey</span></div></div>
-            <div class="event"><div class="time">10:20–10:50</div><div class="desc">Coffee break</div></div>
-            <div class="event"><div class="time">10:50–11:30</div><div class="desc"><strong>David Lurie</strong><span class="talk-title">Algorithmic Aspects in Partially Observable Stochastic Games</span></div></div>
-            <div class="event"><div class="time">11:30–12:10</div><div class="desc"><strong>Célia Gaudin</strong><span class="talk-title">Complexity of the Limit Value in Stochastic Games</span></div></div>
-            <div class="event"><div class="time">12:30–13:45</div><div class="desc">Lunch</div></div>
-            <div class="event"><div class="time">13:45–14:25</div><div class="desc"><strong>Marc Quincampoix</strong><span class="talk-title">Generalized Abelian Theorems for Long Run Optimal Control</span></div></div>
-            <div class="event"><div class="time">14:25–15:05</div><div class="desc"><strong>Xavier Venel</strong><span class="talk-title">Back in the Queue: Strategic Re-Entry in Queueing Games</span></div></div>
-            <div class="event"><div class="time">15:05–15:45</div><div class="desc"><strong>Achraf Azize</strong><span class="talk-title">Optimal Regret of Bandits under Differential Privacy</span></div></div>
+
+            <div class="event">
+              <div class="time">09:40–10:20</div>
+              <div class="desc">
+                <strong>Guillaume Vigeral</strong>
+                <span class="talk-title">Percolation MDPs</span>
+              </div>
+            </div>
+
+            <div class="event">
+              <div class="time">10:20–10:50</div>
+              <div class="desc">Coffee break</div>
+            </div>
+
+            <div class="event">
+              <div class="time">10:50–11:30</div>
+              <div class="desc">
+                <strong>Andrea Davini</strong>
+                <span class="talk-title">Stochastic Homogenization of HJ Equations: A Differential Game Approach</span>
+              </div>
+            </div>
+
+            <div class="event">
+              <div class="time">11:30–12:10</div>
+              <div class="desc">
+                <strong>Melissa Garcia Gonzalez</strong>
+                <span class="talk-title">Stochastic Homogenization of Second-Order HJ Equations</span>
+              </div>
+            </div>
+
+            <div class="event">
+              <div class="time">12:30–13:45</div>
+              <div class="desc">Lunch</div>
+            </div>
+
+            <div class="event">
+              <div class="time">13:45–14:25</div>
+              <div class="desc">
+                <strong>Marc Quincampoix</strong>
+                <span class="talk-title">Generalized Abelian Theorems for Long Run Optimal Control</span>
+              </div>
+            </div>
+
+            <div class="event">
+              <div class="time">14:25–15:05</div>
+              <div class="desc">
+                <strong>Xavier Venel</strong>
+                <span class="talk-title">Back in the Queue: Strategic Re-Entry in Queueing Games</span>
+              </div>
+            </div>
+
+            <div class="event">
+              <div class="time">15:05–15:45</div>
+              <div class="desc">
+                <strong>Achraf Azize</strong>
+                <span class="talk-title">Optimal Regret of Bandits under Differential Privacy</span>
+              </div>
+            </div>
+
           </div>
         </div>
+
       </div>
     </section>
 
@@ -334,9 +430,3 @@ Voici le code complet à copier-coller dans `index.html` sur GitHub. J'ai ajout�
   </footer>
 </body>
 </html>
-
-```
-
-Tu peux remplacer tout le contenu de `index.html` sur GitHub par ce code, puis cliquer sur **Commit changes**.
-
-J’ai aussi préparé le fichier HTML complet si tu préfères le récupérer directement.
